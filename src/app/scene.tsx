@@ -20,6 +20,26 @@ class Scene extends Component {
         this.handleWindowResize = this.handleWindowResize.bind(this);
     }
 
+    container: any;
+
+    frameId: any;
+
+    renderer: any;
+
+    spotLight: any;
+
+    controls: any;
+
+    scene: any;
+
+    camera: any;
+
+    object: any;
+
+    width: number;
+
+    height: number;
+
     componentDidMount() {
         this.setupScene();
     }
