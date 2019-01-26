@@ -10,7 +10,8 @@
     "build": "webpack",
     "type": "tsc --noEmit",
     "lint": "eslint . --ext .tsx",
-    "server": "webpack-dev-server"
+    "server": "webpack-dev-server",
+    "coverage": "node_modules/.bin/remap-istanbul -i coverage/coverage-final.json -o coverage/coverage-remapped.json && codecov -f coverage/coverage-remapped.json"
   },
   "pre-commit": [
     "test",
@@ -51,6 +52,7 @@
     "jest": "^23.6.0",
     "pre-commit": "^1.2.2",
     "prettier": "^1.14.3",
+    "remap-istanbul": "^0.13.0",
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.4",
     "webpack": "^4.20.2",

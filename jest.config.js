@@ -7,5 +7,6 @@ module.exports = {
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     collectCoverage: true,
     coverageReporters: ['json'],
-    setupFiles: ['./setupTests.ts']
+    setupFiles: ['./enzyme.config.ts'],
+    coverageDirectory: './coverage/'
 };
