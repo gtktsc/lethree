@@ -3,29 +3,33 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: './src/index.tsx',
     output: {
         filename: 'bundle.js',
         path: path.join(__dirname, '/build')
     },
     watch: true,
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
+    },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        babelrc: true,
+                        babelrc: false,
                         plugins: [
                             [
                                 '@babel/plugin-proposal-class-properties',
                                 { asd: true }
-                            ]
+                            ],
+                            '@babel/plugin-transform-typescript'
                         ],
                         presets: [
-                            '@babel/flow',
+                            '@babel/preset-typescript',
                             '@babel/react',
                             '@babel/preset-env'
                         ]
