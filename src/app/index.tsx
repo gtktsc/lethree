@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Scene from './scene';
+// import Scene from './scene';
 
 interface Props {
     init: boolean;
@@ -28,7 +28,7 @@ export default class App extends Component<Props, State> {
                 <input value={value} onChange={this.onChange} />
                 <div>{value}</div>
                 {'value'}
-                <Scene />
+                {/* <Scene /> */}
             </Fragment>
         );
     }
