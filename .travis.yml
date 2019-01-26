@@ -7,3 +7,7 @@ before_script:
   - "yarn test"
 env:
   - CODECOV_TOKEN="e50c2896-42e5-4643-9c97-7ff911dc37a3"
+scripts:
+  - npm install codecov -g
+after_success:
+  - codecov
