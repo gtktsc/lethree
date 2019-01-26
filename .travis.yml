@@ -10,4 +10,7 @@ env:
 scripts:
   - npm install codecov -g
 after_success:
-  - codecov -t CODECOV_TOKEN
+  - bash <(curl -s https://codecov.io/bash) -t CODECOV_TOKEN
+cache:
+  directories:
+  - node_modules
