@@ -60,7 +60,7 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['**/test.js', '**/*.test.js'],
+            files: ['**/test.ts', '**/*.test.tsx'],
             rules: {
                 'global-require': 'off'
             }
