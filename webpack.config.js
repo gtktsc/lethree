@@ -6,7 +6,9 @@ module.exports = {
     entry: './src/index.tsx',
     output: {
         filename: 'bundle.js',
-        path: path.join(__dirname, '/build')
+        chunkFilename: '[name].bundle.js',
+        path: path.join(__dirname, '/build'),
+        publicPath: 'http://localhost:8080/' // fuck this muthafucking webpack for this shit
     },
     watch: true,
     resolve: {
@@ -31,7 +33,8 @@ module.exports = {
                                 '@babel/plugin-proposal-class-properties',
                                 { asd: true }
                             ],
-                            '@babel/plugin-transform-typescript'
+                            '@babel/plugin-transform-typescript',
+                            'syntax-dynamic-import'
                         ],
                         presets: [
                             '@babel/preset-typescript',

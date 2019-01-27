@@ -64,7 +64,8 @@ module.exports = {
         'jest/prefer-to-have-length': 'error',
         '@typescript-eslint/no-explicit-any': 'warn',
         'import/named': 'error',
-        'import/no-named-as-default': 'off'
+        'import/no-named-as-default': 'off',
+        'react/prop-types': 'off'
     },
     overrides: [
         {

@@ -7,4 +7,4 @@ const base = document.getElementById('root') || document.createElement('div');
 
 body.appendChild(base);
 
-ReactDOM.render(<App init />, base);
+ReactDOM.render(<App />, base);
