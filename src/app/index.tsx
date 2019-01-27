@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Scene from './scene';
+import Scene from './slide/scene';
 
 interface Props {
     init: boolean;

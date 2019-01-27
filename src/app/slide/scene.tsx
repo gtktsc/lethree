@@ -1,10 +1,10 @@
 import OrbitControls from 'three-orbitcontrols';
 import * as THREE from 'three';
 import React, { Component } from 'react';
-import Mesh from '../assets/mesh.png';
-import Clouds from '../assets/clouds.jpg';
-import Earth from '../assets/earth.jpg';
-import Water from '../assets/water.png';
+import Mesh from 'assets/mesh.png';
+import Clouds from 'assets/clouds.jpg';
+import Earth from 'assets/earth.jpg';
+import Water from 'assets/water.png';
 
 class Scene extends Component {
     constructor(props) {

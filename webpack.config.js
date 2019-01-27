@@ -10,7 +10,12 @@ module.exports = {
     },
     watch: true,
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+        alias: {
+            assets: path.resolve(__dirname, 'src/assets/'),
+            mocks: path.resolve(__dirname, 'src/mocks/'),
+            components: path.resolve(__dirname, 'src/components/')
+        }
     },
     module: {
         rules: [

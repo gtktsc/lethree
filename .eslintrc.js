@@ -25,6 +25,14 @@ module.exports = {
         'import/resolver': {
             node: {
                 extensions: ['.js', '.jsx', '.tsx']
+            },
+            alias: {
+                map: [
+                    ['assets', './src/assets/'],
+                    ['mocks', './src/mocks/'],
+                    ['components', './src/components/']
+                ],
+                extensions: ['.ts', '.js', '.jsx', '.tsx']
             }
         }
     },
