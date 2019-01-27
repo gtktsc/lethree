@@ -25,6 +25,14 @@ module.exports = {
         'import/resolver': {
             node: {
                 extensions: ['.js', '.jsx', '.tsx']
+            },
+            alias: {
+                map: [
+                    ['assets', './src/assets/'],
+                    ['mocks', './src/mocks/'],
+                    ['components', './src/components/']
+                ],
+                extensions: ['.ts', '.js', '.jsx', '.tsx']
             }
         }
     },
@@ -56,7 +64,8 @@ module.exports = {
         'jest/prefer-to-have-length': 'error',
         '@typescript-eslint/no-explicit-any': 'warn',
         'import/named': 'error',
-        'import/no-named-as-default': 'off'
+        'import/no-named-as-default': 'off',
+        'react/prop-types': 'off'
     },
     overrides: [
         {

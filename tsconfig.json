@@ -1,12 +1,21 @@
 {
     "compilerOptions": {
     "sourceMap": true,
+    "removeComments": false,
     "module": "esnext",
+    "lib": [ "esnext","dom" ],
     "moduleResolution": "node",
     "target": "es5",
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "typeRoots": [ "./types", "./node_modules/@types"]
+    "typeRoots": [ "./types", "./node_modules/@types"],
+    "baseUrl": "./",
+        "paths": {
+            "assets/*": ["./src/assets/*"],
+            "mocks/*": ["./src/mocks/*"],
+            "components/*": ["./src/components/*"]
+        }
+        
    }
 }
