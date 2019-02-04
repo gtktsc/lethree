@@ -18,7 +18,6 @@ const App = ({ initAppProps }) => {
         ...extractLocation(window.location.pathname),
         baseUrl: window.location.origin
     };
-
     initAppProps(appProps);
 
     function handleDrawerOpen() {
@@ -33,11 +32,7 @@ const App = ({ initAppProps }) => {
         <ThemeProvider theme={theme}>
             <CSS />
             <BrowserRouter>
-                <Header
-                    handleDrawerOpen={handleDrawerOpen}
-                    open={open}
-                    location={appProps}
-                />
+                <Header handleDrawerOpen={handleDrawerOpen} open={open} />
                 <Navigation handleDrawerClose={handleDrawerClose} open={open} />
                 <Router />
             </BrowserRouter>

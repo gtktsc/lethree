@@ -1,23 +1,16 @@
 import { Route, Switch } from 'react-router-dom';
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense } from 'react';
 
 import { makeStyles } from '@material-ui/styles';
 import Spinner from 'components/spinner';
 import Error from 'components/error';
-
-const Dashboard = lazy(() =>
-    import(/* webpackChunkName: "dashboard" */ '../dashboard')
-);
-const Project = lazy(() =>
-    import(/* webpackChunkName: "project" */ '../project')
-);
-const Construction = lazy(() =>
-    import(/* webpackChunkName: "construction" */ '../construction')
-);
-const Slide = lazy(() => import(/* webpackChunkName: "slide" */ '../slide'));
+import Dashboard from './routes/dashboard/index';
+import Project from './routes/project/index';
+import Slide from './routes/slide/index';
+import Construction from './routes/construction/index';
 
 interface Props {
-    location: Object;
+    patchLocation: Function;
 }
 
 const useStyles = makeStyles(theme => ({
@@ -27,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const Router: React.SFC<Props> = ({ location }) => {
+const Router: React.SFC<Props> = ({ patchLocation }) => {
     const classes = useStyles();
 
     return (
@@ -41,7 +34,10 @@ const Router: React.SFC<Props> = ({ location }) => {
                             exact
                             path="/"
                             render={props => (
-                                <Dashboard {...props} location={location} />
+                                <Dashboard
+                                    {...props}
+                                    patchLocation={patchLocation}
+                                />
                             )}
                         />
                         <Route path="/:project">
@@ -53,7 +49,7 @@ const Router: React.SFC<Props> = ({ location }) => {
                                         render={props => (
                                             <Project
                                                 {...props}
-                                                location={location}
+                                                patchLocation={patchLocation}
                                             />
                                         )}
                                     />
@@ -68,7 +64,9 @@ const Router: React.SFC<Props> = ({ location }) => {
                                                     render={props => (
                                                         <Construction
                                                             {...props}
-                                                            location={location}
+                                                            patchLocation={
+                                                                patchLocation
+                                                            }
                                                         />
                                                     )}
                                                 />
@@ -79,7 +77,9 @@ const Router: React.SFC<Props> = ({ location }) => {
                                                     render={props => (
                                                         <Slide
                                                             {...props}
-                                                            location={location}
+                                                            patchLocation={
+                                                                patchLocation
+                                                            }
                                                         />
                                                     )}
                                                 />

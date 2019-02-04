@@ -1,16 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import View from './view';
+import { patchLocation as patchLocationAction } from '../state/actions/app';
 
-import { getAppProps } from '../state/selectors/app/index';
+const App = ({ patchLocation }) => <View patchLocation={patchLocation} />;
 
-const App = ({ appProps }) => <View location={appProps} />;
+const mapStateToProps = () => ({});
 
-const mapStateToProps = state => ({
-    appProps: getAppProps(state)
+const mapDispatchToProps = dispatch => ({
+    patchLocation: location => dispatch(patchLocationAction(location))
 });
-
-const mapDispatchToProps = () => ({});
 
 export default connect(
     mapStateToProps,

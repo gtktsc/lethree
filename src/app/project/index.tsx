@@ -1,12 +1,9 @@
 import React from 'react';
 
-const Project = ({ location }) => (
+const Project = () => (
     <div>
         <h1>My counter</h1>
-        <div>
-            {'test'}
-            {console.log({ location })}
-        </div>
+        <div>{'test'}</div>
     </div>
 );
 
