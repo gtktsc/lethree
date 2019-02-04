@@ -60,14 +60,14 @@ function MiniDrawer({ handleDrawerOpen, open, location }) {
                 </IconButton>
                 {location && location.project && (
                     <Link to={`/${location.project}`}>
-                        <Typography variant="h6" color="inherit" noWrap>
+                        <Typography variant="h6" color="textSecondary" noWrap>
                             {`${location && location.project}`}
                         </Typography>
                     </Link>
                 )}
                 {location && location.construction && (
                     <Link to={`/${location.project}/${location.construction}`}>
-                        <Typography variant="h6" color="inherit" noWrap>
+                        <Typography variant="h6" color="textSecondary" noWrap>
                             {`/${location && location.construction}`}
                         </Typography>
                     </Link>
@@ -78,7 +78,7 @@ function MiniDrawer({ handleDrawerOpen, open, location }) {
                             location.slide
                         }`}
                     >
-                        <Typography variant="h6" color="inherit" noWrap>
+                        <Typography variant="h6" color="textSecondary" noWrap>
                             {`/${location && location.slide}`}
                         </Typography>
                     </Link>
