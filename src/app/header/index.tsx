@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function MiniDrawer({ handleDrawerOpen, open }) {
+function MiniDrawer({ handleDrawerOpen, open, location }) {
     const classes = useStyles();
 
     return (
@@ -58,7 +58,7 @@ function MiniDrawer({ handleDrawerOpen, open }) {
                     <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" color="inherit" noWrap>
-                    {'whereim'}
+                    {location.project}
                 </Typography>
             </Toolbar>
         </AppBar>

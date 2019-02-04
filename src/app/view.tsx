@@ -33,7 +33,11 @@ const App = ({ initAppProps }) => {
         <ThemeProvider theme={theme}>
             <CSS />
             <BrowserRouter>
-                <Header handleDrawerOpen={handleDrawerOpen} open={open} />
+                <Header
+                    handleDrawerOpen={handleDrawerOpen}
+                    open={open}
+                    location={appProps}
+                />
                 <Navigation handleDrawerClose={handleDrawerClose} open={open} />
                 <Router />
             </BrowserRouter>
