@@ -1,18 +1,14 @@
-import React, { lazy, Fragment } from 'react';
-import Fade from '@material-ui/core/Fade';
-import Updater from 'components/updater';
+import React, { lazy } from 'react';
+import Route from 'components/route';
 
 const App = lazy(() =>
     import(/* webpackChunkName: "slide" */ '../../../slide')
 );
 
 const Slide = ({ patchLocation }) => (
-    <Fade timeout={500}>
-        <Fragment>
-            <App />
-            <Updater patchLocation={patchLocation} />
-        </Fragment>
-    </Fade>
+    <Route patchLocation={patchLocation}>
+        <App />
+    </Route>
 );
 
 export default Slide;

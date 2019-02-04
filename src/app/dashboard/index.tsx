@@ -3,9 +3,9 @@ import projects from 'mocks/data/project';
 
 const Dashboard = () => (
     <Fragment>
-        {'dash'}
+        {'dashboards'}
         {projects.map(project => (
-            <div key={project.id}>{`id-${project.id}`}</div>
+            <div key={project.id}>{`${project.name}`}</div>
         ))}
     </Fragment>
 );
