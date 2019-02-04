@@ -16,6 +16,8 @@ module.exports = {
         alias: {
             assets: path.resolve(__dirname, 'src/assets/'),
             mocks: path.resolve(__dirname, 'src/mocks/'),
+            baskets: path.resolve(__dirname, 'src/baskets/'),
+            utils: path.resolve(__dirname, 'src/utils/'),
             components: path.resolve(__dirname, 'src/components/')
         }
     },
@@ -56,5 +58,8 @@ module.exports = {
             filename: 'index.html',
             inject: 'body'
         })
-    ]
+    ],
+    devServer: {
+        historyApiFallback: true
+    }
 };

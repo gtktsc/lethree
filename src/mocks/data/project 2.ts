@@ -4,7 +4,7 @@ import constructions from './construction';
 export const createMockProject = id => ({
     id,
     name: `project-${id}`,
-    url: `url-${id}`,
+    path: `path-${id}`,
     constructions
 });
 
