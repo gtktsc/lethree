@@ -59,30 +59,44 @@ const populateNav = ({ location }) => {
                 <SingleLink
                     key={slide.id}
                     to={`/${location.project}/${location.construction}/${
-                        slide.name
-                    }`}
+                        location.task
+                    }/${slide.name}`}
                     Icon={Apps}
                     title={`Slide: ${slide.name}`}
                 />
             ));
         }
-        case 'construction': {
-            return data.map(construction => (
+        case 'task': {
+            return data.map(task => (
                 <SingleLink
-                    key={construction.id}
-                    to={`/${location.project}/${construction.name}`}
+                    key={task.id}
+                    to={`/${location.project}/${location.construction}/${
+                        task.name
+                    }`}
+                    Icon={Apps}
+                    title={`Task: ${task.name}`}
+                />
+            ));
+        }
+        case 'construction': {
+            return data.map(task => (
+                <SingleLink
+                    key={task.id}
+                    to={`/${location.project}/${location.construction}/${
+                        task.name
+                    }`}
                     Icon={InboxIcon}
-                    title={`Constructions: ${construction.name}`}
+                    title={`tasks: ${task.name}`}
                 />
             ));
         }
         case 'project': {
-            return data.map(project => (
+            return data.map(construction => (
                 <SingleLink
-                    key={project.id}
-                    to={`/${project.name}`}
+                    key={construction.id}
+                    to={`/${location.project}/${construction.name}`}
                     Icon={Folder}
-                    title={`project: ${project.name}`}
+                    title={`construction: ${construction.name}`}
                 />
             ));
         }

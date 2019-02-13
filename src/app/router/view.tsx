@@ -7,6 +7,7 @@ import Error from 'components/error';
 import Dashboard from './routes/dashboard/index';
 import Project from './routes/project/index';
 import Slide from './routes/slide/index';
+import Task from './routes/task/index';
 import Construction from './routes/construction/index';
 
 interface Props {
@@ -77,16 +78,35 @@ const Router: React.SFC<Props> = ({ patchLocation }) => {
                                                 <Route
                                                     path={`${
                                                         construction.url
-                                                    }/:slide`}
-                                                    render={props => (
-                                                        <Slide
-                                                            {...props}
-                                                            patchLocation={
-                                                                patchLocation
-                                                            }
-                                                        />
+                                                    }/:task`}
+                                                >
+                                                    {({ match: task }) => (
+                                                        <Switch>
+                                                            <Route
+                                                                exact
+                                                                path={task.url}
+                                                                render={props => (
+                                                                    <Task
+                                                                        {...props}
+                                                                        patchLocation={
+                                                                            patchLocation
+                                                                        }
+                                                                    />
+                                                                )}
+                                                            />
+                                                            <Route
+                                                                render={props => (
+                                                                    <Slide
+                                                                        {...props}
+                                                                        patchLocation={
+                                                                            patchLocation
+                                                                        }
+                                                                    />
+                                                                )}
+                                                            />
+                                                        </Switch>
                                                     )}
-                                                />
+                                                </Route>
                                             </Switch>
                                         )}
                                     </Route>

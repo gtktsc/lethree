@@ -72,11 +72,22 @@ function MiniDrawer({ handleDrawerOpen, open, location }) {
                         </Typography>
                     </Link>
                 )}
+                {location && location.task && (
+                    <Link
+                        to={`/${location.project}/${location.construction}/${
+                            location.task
+                        }`}
+                    >
+                        <Typography variant="h6" color="textSecondary" noWrap>
+                            {`/${location && location.task}`}
+                        </Typography>
+                    </Link>
+                )}
                 {location && location.slide && (
                     <Link
                         to={`/${location.project}/${location.construction}/${
-                            location.slide
-                        }`}
+                            location.task
+                        }/${location.slide}`}
                     >
                         <Typography variant="h6" color="textSecondary" noWrap>
                             {`/${location && location.slide}`}

@@ -22,16 +22,15 @@ const useStyles = makeStyles(theme => ({
 function NestedGrid({ location }) {
     const { data } = transformMocks({ location, projects });
     const classes = useStyles();
-    console.log({ data, location });
     return (
         <div className={classes.root}>
             <Grid container spacing={24}>
-                {data.map(task => (
-                    <Grid key={task.id} item xs={4}>
+                {data.map(slide => (
+                    <Grid key={slide.id} item xs={4}>
                         <Link
                             to={`/${location.project}/${
                                 location.construction
-                            }/${task.name}`}
+                            }/${location.task}/${slide.name}`}
                         >
                             <Paper className={classes.paper}>
                                 <Typography variant="h5" component="h3">
@@ -41,7 +40,10 @@ function NestedGrid({ location }) {
                                     {location.construction}
                                 </Typography>
                                 <Typography component="p">
-                                    {task.name}
+                                    {location.task}
+                                </Typography>
+                                <Typography component="p">
+                                    {slide.name}
                                 </Typography>
                             </Paper>
                         </Link>
