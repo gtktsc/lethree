@@ -11,7 +11,6 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import Folder from '@material-ui/icons/Folder';
 import Home from '@material-ui/icons/Home';
-import Apps from '@material-ui/icons/Apps';
 import projects from 'mocks/data/project';
 import transformMocks from 'utils/get-corresponding-data';
 import SingleLink from './link';
@@ -54,30 +53,6 @@ const useStyles = makeStyles(theme => ({
 const populateNav = ({ location }) => {
     const { data, view } = transformMocks({ location, projects });
     switch (view) {
-        case 'slide': {
-            return data.map(slide => (
-                <SingleLink
-                    key={slide.id}
-                    to={`/${location.project}/${location.construction}/${
-                        location.task
-                    }/${slide.name}`}
-                    Icon={Apps}
-                    title={`Slide: ${slide.name}`}
-                />
-            ));
-        }
-        case 'task': {
-            return data.map(task => (
-                <SingleLink
-                    key={task.id}
-                    to={`/${location.project}/${location.construction}/${
-                        task.name
-                    }`}
-                    Icon={Apps}
-                    title={`Task: ${task.name}`}
-                />
-            ));
-        }
         case 'construction': {
             return data.map(task => (
                 <SingleLink
@@ -100,6 +75,8 @@ const populateNav = ({ location }) => {
                 />
             ));
         }
+        case 'task':
+        case 'slide':
         default:
             return null;
     }
