@@ -1,15 +1,22 @@
+import { cloneElement } from 'react';
+
 import locationExtracter from 'utils/location-extractor';
 
 const LocationUpdater = ({ patchLocation, children }) => {
+    const currentUrl = window && window.location && window.location.pathname;
+
+    const currentLocation = locationExtracter(currentUrl);
+
     if (typeof patchLocation === 'function') {
-        const currentLocation =
-            window && window.location && window.location.pathname;
-        patchLocation(locationExtracter(currentLocation));
+        patchLocation(currentLocation);
+    } else {
+        throw new Error('cannot patch location');
     }
+
     if (children) {
-        return children;
+        return cloneElement(children, { location: currentLocation });
     }
-    return null;
+    throw new Error('cannot create element');
 };
 
 export default LocationUpdater;

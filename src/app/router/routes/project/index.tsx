@@ -5,9 +5,9 @@ const App = lazy(() =>
     import(/* webpackChunkName: "project" */ '../../../project')
 );
 
-const Project = ({ patchLocation }) => (
+const Project = ({ patchLocation, location }) => (
     <Route patchLocation={patchLocation}>
-        <App />
+        <App location={location} />
     </Route>
 );
 

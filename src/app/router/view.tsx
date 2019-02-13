@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
-import React, { Suspense } from 'react';
+import React, { memo, Suspense } from 'react';
 
 import { makeStyles } from '@material-ui/styles';
 import Spinner from 'components/spinner';
@@ -49,6 +49,7 @@ const Router: React.SFC<Props> = ({ patchLocation }) => {
                                         render={props => (
                                             <Project
                                                 {...props}
+                                                location={props.location}
                                                 patchLocation={patchLocation}
                                             />
                                         )}
@@ -64,6 +65,9 @@ const Router: React.SFC<Props> = ({ patchLocation }) => {
                                                     render={props => (
                                                         <Construction
                                                             {...props}
+                                                            location={
+                                                                props.location
+                                                            }
                                                             patchLocation={
                                                                 patchLocation
                                                             }
@@ -96,4 +100,4 @@ const Router: React.SFC<Props> = ({ patchLocation }) => {
     );
 };
 
-export default Router;
+export default memo(Router);
