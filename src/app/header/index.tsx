@@ -4,17 +4,13 @@ import View from './view';
 
 import { getAppProps } from '../state/selectors/app/index';
 
-const App = ({ location, handleDrawerClose, open }) => (
-    <View
-        open={open}
-        handleDrawerClose={handleDrawerClose}
-        location={location}
-    />
+const App = ({ location, handleDrawerOpen, open }) => (
+    <View open={open} handleDrawerOpen={handleDrawerOpen} location={location} />
 );
 
 const mapStateToProps = (state, ownProps) => ({
     location: getAppProps(state),
-    handleDrawerClose: ownProps.handleDrawerClose,
+    handleDrawerOpen: ownProps.handleDrawerOpen,
     open: ownProps.open
 });
 

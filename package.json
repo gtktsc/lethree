@@ -10,7 +10,7 @@
     "build": "webpack",
     "type": "tsc --noEmit",
     "lint": "eslint . --ext .tsx",
-    "server": "webpack-dev-server",
+    "start": "webpack-dev-server",
     "coverage": "node_modules/.bin/remap-istanbul -i coverage/coverage-final.json -o coverage/coverage-remapped.json && codecov -f coverage/coverage-remapped.json"
   },
   "pre-commit": [
@@ -29,8 +29,8 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.1.0",
     "@types/jest": "^24.0.0",
-    "@types/react": "^16.7.20",
-    "@types/react-dom": "^16.0.11",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "@typescript-eslint/eslint-plugin": "^1.1.0",
     "@typescript-eslint/parser": "^1.1.0",
     "babel-eslint": "^10.0.1",
@@ -63,12 +63,15 @@
     "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
-    "emotion": "^10.0.6",
-    "react": "16.8.0",
-    "react-dom": "16.8.0",
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
+    "@material-ui/styles": "latest",
+    "classnames": "latest",
+    "react": "next",
+    "react-dom": "next",
     "react-redux": "^6.0.0",
     "react-router-dom": "4.4.0-beta.6",
-    "redux": "^4.0.0",
+    "redux": "^4.0.1",
     "three": "^0.100.0",
     "three-orbitcontrols": "^2.99.1"
   }

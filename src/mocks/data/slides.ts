@@ -2,7 +2,7 @@ import times from 'lodash.times';
 
 export const createMockSlides = id => ({
     id,
-    name: `task-${id}`,
+    name: `slide-${id}`,
     path: `path-${id}`
 });
 

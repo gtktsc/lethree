@@ -30,6 +30,8 @@ module.exports = {
                 map: [
                     ['assets', './src/assets/'],
                     ['mocks', './src/mocks/'],
+                    ['baskets', './src/baskets/'],
+                    ['utils', './src/utils/'],
                     ['components', './src/components/']
                 ],
                 extensions: ['.ts', '.js', '.jsx', '.tsx']
@@ -65,7 +67,8 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'warn',
         'import/named': 'error',
         'import/no-named-as-default': 'off',
-        'react/prop-types': 'off'
+        'react/prop-types': 'off',
+        'react/display-name': 'off'
     },
     overrides: [
         {

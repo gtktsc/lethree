@@ -9,13 +9,19 @@
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "skipLibCheck": true, //remove it once packages will be deduped
     "typeRoots": [ "./types", "./node_modules/@types"],
     "baseUrl": "./",
         "paths": {
             "assets/*": ["./src/assets/*"],
             "mocks/*": ["./src/mocks/*"],
+            "baskets/*": ["./src/baskets/*"],
+            "utils/*": ["./src/utils/*"],
             "components/*": ["./src/components/*"]
         }
         
-   }
+   },
+   "exclude": [
+    "node_modules"
+    ]
 }

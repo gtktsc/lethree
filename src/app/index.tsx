@@ -1,15 +1,15 @@
-import React, { Fragment } from 'react';
-import Navigation from './navigation';
-import Router from './routing';
+import React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import View from './view';
+import rootReducer from './state/reducers/index';
 
-interface Props {}
-
-interface State {}
+const store = createStore(rootReducer);
 
 const App = () => (
-    <Fragment>
-        <Router navigation={Navigation} />
-    </Fragment>
+    <Provider store={store}>
+        <View />
+    </Provider>
 );
 
 export default App;

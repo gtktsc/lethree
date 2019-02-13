@@ -3,7 +3,7 @@ import tasks from './tasks';
 
 export const createMockConstruction = id => ({
     id,
-    name: `project-${id}`,
+    name: `construction-${id}`,
     path: `path-${id}`,
     tasks
 });
