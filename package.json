@@ -69,7 +69,7 @@
     "classnames": "latest",
     "react": "next",
     "react-dom": "next",
-    "react-redux": "^6.0.0",
+    "react-redux": "^7.0.0",
     "react-router-dom": "4.4.0-beta.6",
     "redux": "^4.0.1",
     "three": "^0.100.0",
