@@ -70,7 +70,7 @@
     "react": "next",
     "react-dom": "next",
     "react-redux": "^6.0.0",
-    "react-router-dom": "4.4.0-beta.6",
+    "react-router-dom": "5.0.1",
     "redux": "^4.0.1",
     "three": "^0.100.0",
     "three-orbitcontrols": "^2.99.1"
