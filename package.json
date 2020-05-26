@@ -20,7 +20,7 @@
   ],
   "root": true,
   "devDependencies": {
-    "@babel/cli": "^7.1.0",
+    "@babel/cli": "^7.10.0",
     "@babel/core": "^7.1.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-transform-typescript": "^7.2.0",
